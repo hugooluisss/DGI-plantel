@@ -1,0 +1,7 @@
+Hola /*usuario.nombre*/
+
+Enviamos el siguiente correo con la finalidad de recordarle sus datos de acceso a la aplicación Evaluación Docente. A continuación los datos
+
+Usuario: /*usuario.user*/
+Contraseña: /*usuario.pass*/
+
