@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$("#tblResultados").DataTable({
 		"responsive": true,
 		"language": espaniol,
-		"paging": false,
+		"paging": true,
 		"lengthChange": false,
 		"ordering": true,
 		"info": true,

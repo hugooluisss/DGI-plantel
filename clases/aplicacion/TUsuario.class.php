@@ -82,6 +82,16 @@ class TUsuario{
 		return json_decode($this->otro);
 	}
 	
+	public function getFoto(){
+		$obj = $this->getDecodeOtro();
+		return $obj->foto;
+	}
+	
+	public function getPlantel(){
+		$obj = $this->getDecodeOtro();
+		return $obj->id_plantel;
+	}
+	
 	public function buscarPorUsuario($usuario = ''){
 		if ($usuario == '') return false;
 		

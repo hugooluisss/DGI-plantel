@@ -214,4 +214,20 @@ $conf['cmail'] = array(
 	'descripcion' => 'Controlador para el envio de correos',
 	'seguridad' => true,
 	'capa' => LAYOUT_AJAX);
+	
+$conf['soporteTecnico'] = array(
+	'controlador' => 'soporteTecnico.php',
+	'vista' => 'soporteTecnico/panel.tpl',
+	'descripcion' => 'Configuracion del sistema',
+	'seguridad' => true,
+	#'js' => array('aplicacion.class.js'),
+	'jsTemplate' => array('soporteTecnico.js'),
+	'capa' => LAYOUT_DEFECTO);
+	
+$conf['detalleUsuario'] = array(
+	'controlador' => 'soporteTecnico.php',
+	'vista' => 'soporteTecnico/detalleUsuario.tpl',
+	'descripcion' => 'Detalle del registro de usuario',
+	'seguridad' => true,
+	'capa' => LAYOUT_AJAX);
 ?>

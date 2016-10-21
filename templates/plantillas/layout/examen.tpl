@@ -56,7 +56,7 @@
 									<a href="#winReactivos" id="lnkOpenReactivos">Reactivos de {$seccion->getNombre()}</a>
 								</li>
 								
-								<li><a href="?mod=instruccionesExamen&id={$seccion->getExamen()}">Seleccionar otra sección</a></li>
+								<!--<li><a href="?mod=instruccionesExamen&id={$seccion->getExamen()}">Seleccionar otra sección</a></li>-->
 								{/if}
 							{/if}
 						</ul>
@@ -74,6 +74,7 @@
 								<ul class="dropdown-menu">
 									<!-- The user image in the menu -->
 									<li class="user-header">
+										<img src="http://www.iebo.edu.mx/interno/sip-web/fotos/{$PAGE.usuario->getFoto()}" onerror="javascript: this.src='{$PAGE.ruta}img/logo.jpg'" alt="User Image"/>
 										<p>
 											{$PAGE.usuario->getNombre()}
 											<small>{$PAGE.usuario->getUser()}</small>

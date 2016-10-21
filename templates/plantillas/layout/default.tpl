@@ -65,6 +65,8 @@
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
 								<li class="user-header">
+									<!--<img src="{$PAGE.ruta}img/logo.jpg" alt="User Image"/>-->
+									<img src="http://www.iebo.edu.mx/interno/sip-web/fotos/{$PAGE.usuario->getFoto()}" onerror="javascript: this.src='{$PAGE.ruta}img/logo.jpg'" alt="User Image"/>
 									<p>
 										{$PAGE.usuario->getNombre()}
 										<small>{$PAGE.usuario->getUser()}</small>
@@ -103,8 +105,15 @@
 							<li {if $PAGE.modulo eq 'configuracion'}class="active"{/if}><a href="?mod=configuracion"><i class="fa fa-cogs"></i> Configuración</a></li>
 							<li {if $PAGE.modulo eq 'admonUsuarios'}class="active"{/if}><a href="?mod=admonUsuarios"><i class="fa fa-user"></i> Usuarios</a></li>
 						</ul>
+					</li>
+					<li {if $PAGE.modulo eq 'examenes'}class="active"{/if}>
 						<a href="?mod=examenes">
-							<li {if $PAGE.modulo eq 'examenes'}class="active"{/if}><i class="fa fa-pencil-square-o"></i> Exámenes</li>
+							<i class="fa fa-pencil-square-o"></i> Exámenes
+						</a>
+					</li>
+					<li {if $PAGE.modulo eq 'soporteTecnico'}class="active"{/if}>
+						<a href="?mod=soporteTecnico">
+							<i class="fa fa-phone"></i> Soporte técnico
 						</a>
 					</li>
 				</ul>

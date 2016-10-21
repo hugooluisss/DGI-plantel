@@ -67,14 +67,14 @@
 			<h3>¡¡¡ Felicidades !!!</h3>
 			<p>Haz terminado el proceso de evaluación "EVA 2016", tus resultados los podrás consultar en fechas posteriores. Te pedimos estar atento a los comunicados que se emitirán en la página institucional del IEBO.</p>
 			<p>¡Por tu activa participación, Muchas Gracias!</p>
-			
+			<!--
 			<table id="tblSecciones" class="table table-striped table-hover">
 				<thead>
 					<tr>
 						<th>Nombre</th>
 						<th style="text-align: center">Total de puntos</th>
 						<th style="text-align: center">Puntos acumulados</th>
-<!--						<th style="text-align: center">Calificación</th>-->
+<!--						<th style="text-align: center">Calificación</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -83,11 +83,12 @@
 							<td>{$row.nombre}</td>
 							<td style="text-align: right">{$row.puntos}</td>
 							<td style="text-align: right">{$row.acumulados}</td>
-							<!--<td style="text-align: right">{($row.acumulados/$row.puntos * 10)|string_format:"%.1f"}</td>-->
+							<!--<td style="text-align: right">{($row.acumulados/$row.puntos * 10)|string_format:"%.1f"}</td>
 						</tr>
 					{/foreach}
 				</tbody>
 			</table>
+			-->
 		{/if}
 	</div>
 </div>

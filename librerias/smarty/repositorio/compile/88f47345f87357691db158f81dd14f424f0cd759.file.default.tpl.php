@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-14 09:58:30
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-19 12:16:46
          compiled from "templates/plantillas/layout/default.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:200058433755e4995bd4c484-25432014%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
       0 => 'templates/plantillas/layout/default.tpl',
-      1 => 1476288593,
+      1 => 1476897404,
       2 => 'file',
     ),
   ),
@@ -110,6 +110,11 @@ templates/dist/respond.min.js"></script>
 							<ul class="dropdown-menu">
 								<!-- The user image in the menu -->
 								<li class="user-header">
+									<!--<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+img/logo.jpg" alt="User Image"/>-->
+									<img src="http://www.iebo.edu.mx/interno/sip-web/fotos/<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getFoto();?>
+" onerror="javascript: this.src='<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+img/logo.jpg'" alt="User Image"/>
 									<p>
 										<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getNombre();?>
 
@@ -150,8 +155,15 @@ templates/dist/respond.min.js"></script>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='configuracion'){?>class="active"<?php }?>><a href="?mod=configuracion"><i class="fa fa-cogs"></i> Configuración</a></li>
 							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='admonUsuarios'){?>class="active"<?php }?>><a href="?mod=admonUsuarios"><i class="fa fa-user"></i> Usuarios</a></li>
 						</ul>
+					</li>
+					<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='examenes'){?>class="active"<?php }?>>
 						<a href="?mod=examenes">
-							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='examenes'){?>class="active"<?php }?>><i class="fa fa-pencil-square-o"></i> Exámenes</li>
+							<i class="fa fa-pencil-square-o"></i> Exámenes
+						</a>
+					</li>
+					<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='soporteTecnico'){?>class="active"<?php }?>>
+						<a href="?mod=soporteTecnico">
+							<i class="fa fa-phone"></i> Soporte técnico
 						</a>
 					</li>
 				</ul>

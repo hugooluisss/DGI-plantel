@@ -5,7 +5,7 @@ switch($objModulo->getId()){
 	case 'listaTrabajadoresSip':
 		$db = TBase::conectaDB("sip");
 		
-		$rs = $db->Execute("select num_personal, nombres, apellido_p, apellido_m, sexo, curp, nip, fecha_nac, id_plantel, nombre_pl, nombre_localidad, nombre_muni, nombre_distrito, nombre_region, correo_pers
+		$rs = $db->Execute("select num_personal, nombres, apellido_p, apellido_m, sexo, curp, nip, fecha_nac, id_plantel, nombre_pl, nombre_localidad, nombre_muni, nombre_distrito, nombre_region, correo_pers, foto 
 from ficha_personal a join plantel b using(id_plantel)
 	join localidad c on b.localidad_pl = c.cve_localidad and b.municipio_pl = c.cve_municipio
 	join municipio d using(cve_municipio)
@@ -42,6 +42,8 @@ where estatus_laboral = 1;");
 				$aux['identificador'] = $trabajador['num_personal'];
 				$aux['plantel'] = $trabajador['plantel'];
 				$aux['correo'] = str_replace("*", "", $trabajador['correo']);
+				$aux['foto'] = $trabajador['foto'];
+				
 				$obj->setOtro(json_encode($aux));
 				
 				echo json_encode(array("band" => $obj->add()));
