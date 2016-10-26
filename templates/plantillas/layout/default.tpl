@@ -44,7 +44,7 @@
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>EV</b>A</span>
 				<!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>Admin</b>DGI</span>
+				<span class="logo-lg"><b>Admin</b>EVA</span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -97,15 +97,21 @@
 			<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="header">MENÚ PRINCIPAL</li>
+					{if in_array($PAGE.usuario->getTipo(), array(1, 2))}
 					<li class="{if in_array($PAGE.modulo, array('configuracion', 'admonUsuarios'))}active{/if} treeview">
 						<a href="#">
 							<i class="fa fa-cogs"></i> <span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
+							{if in_array($PAGE.usuario->getTipo(), array(1))}
 							<li {if $PAGE.modulo eq 'configuracion'}class="active"{/if}><a href="?mod=configuracion"><i class="fa fa-cogs"></i> Configuración</a></li>
+							{/if}
+							{if in_array($PAGE.usuario->getTipo(), array(1, 2))}
 							<li {if $PAGE.modulo eq 'admonUsuarios'}class="active"{/if}><a href="?mod=admonUsuarios"><i class="fa fa-user"></i> Usuarios</a></li>
+							{/if}
 						</ul>
 					</li>
+					{/if}
 					<li {if $PAGE.modulo eq 'examenes'}class="active"{/if}>
 						<a href="?mod=examenes">
 							<i class="fa fa-pencil-square-o"></i> Exámenes

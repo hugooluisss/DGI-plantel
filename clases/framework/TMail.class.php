@@ -23,18 +23,19 @@ class TMail{
 		#$this->phpMailer->CharSet("UTF8");
 		
 		$this->empresa['nombreCorto'] = utf8_decode("Evaluaciones");
-		$this->phpMailer->IsSMTP();
-		$this->phpMailer->Mailer = "smtp";
-		$this->phpMailer->SMTPSecure = "ssl";
-		$this->phpMailer->Host = "smtp.gmail.com";
+		#$this->phpMailer->IsSMTP();
+		#$this->phpMailer->Mailer = "smtp";
+		//$this->phpMailer->SMTPSecure = "ssl";
+		$this->phpMailer->Host = $ini['mail']['servidor'];
 
 		$this->phpMailer->SMTPAuth = true;
-		$this->phpMailer->Port = 465;
+		$this->phpMailer->Port = 26;
 		$this->phpMailer->Username = $ini['mail']['usuario'];
 		$this->phpMailer->Password = $ini['mail']['pass'];
 		$this->phpMailer->IsHTML (true);
 		$this->phpMailer->FromName = 'Evaluaciones IEBO';
 		$this->permitir = true;
+		$this->phpMailer->SMTPDebug  = 2;
 		#$this->phpMailer->SMTPDebug = true;
 	}
 	

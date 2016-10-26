@@ -1,31 +1,30 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-25 13:16:15
-         compiled from "templates/plantillas/layout/examen.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:743905387580fa16f9c0f64-92323439%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-26 12:13:28
+         compiled from "templates/plantillas/layout/default.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:8478536945810e438bbc307-89132783%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '781b7248ad085f458b980493c12abc4dc8198577' => 
+    '88f47345f87357691db158f81dd14f424f0cd759' => 
     array (
-      0 => 'templates/plantillas/layout/examen.tpl',
-      1 => 1476897046,
+      0 => 'templates/plantillas/layout/default.tpl',
+      1 => 1477500766,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '743905387580fa16f9c0f64-92323439',
+  'nocache_hash' => '8478536945810e438bbc307-89132783',
   'function' => 
   array (
   ),
   'variables' => 
   array (
     'PAGE' => 0,
-    'seccion' => 0,
     'script' => 0,
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_580fa16fb36262_28047372',
+  'unifunc' => 'content_5810e438e10e46_70352024',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_580fa16fb36262_28047372')) {function content_580fa16fb36262_28047372($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5810e438e10e46_70352024')) {function content_5810e438e10e46_70352024($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -81,98 +80,131 @@ templates/dist/html5shiv.min.js"></script>
 templates/dist/respond.min.js"></script>
 	<![endif]-->
 	</head>
-	<body class="hold-transition skin-green layout-top-nav">
-		<div class="wrapper">
-			<header class="main-header">
-				<nav class="navbar navbar-static-top">
-					<div class="container">
-						<div class="navbar-header">
-							<a href="#" class="navbar-brand"><b>EV</b>A</a>
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-								<i class="fa fa-bars"></i>
-							</button>
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-						<ul class="nav navbar-nav">
-							<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']!='sustentante'){?>
-								<?php if (isset($_smarty_tpl->tpl_vars['seccion']->value)==true){?>
-								<li class="dropdown">
-									<a href="#winReactivos" id="lnkOpenReactivos">Reactivos de <?php echo $_smarty_tpl->tpl_vars['seccion']->value->getNombre();?>
-</a>
-								</li>
-								
-								<!--<li><a href="?mod=instruccionesExamen&id=<?php echo $_smarty_tpl->tpl_vars['seccion']->value->getExamen();?>
-">Seleccionar otra sección</a></li>-->
-								<?php }?>
-							<?php }?>
-						</ul>
-					</div><!-- /.navbar-collapse -->
-					<!-- Navbar Right Menu -->
-					<div class="navbar-custom-menu">
-						<ul class="nav navbar-nav">
-							<!-- User Account Menu -->
-							<li class="dropdown user user-menu">
-								<!-- Menu Toggle Button -->
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									<!-- hidden-xs hides the username on small devices so only the image appears. -->
-									<span class="hidden-xs"><?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getNombre();?>
+	<body class="hold-transition skin-green-light sidebar-mini">
+	<div class="wrapper">
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="#" class="logo">
+				<!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini"><b>EV</b>A</span>
+				<!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>Admin</b>EVA</span>
+			</a>
+			<!-- Header Navbar: style can be found in header.less -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+					<span class="sr-only">Toggle navigation</span>
+				</a>
+				
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<li class="dropdown user user-menu">
+							<!-- Menu Toggle Button -->
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<!-- hidden-xs hides the username on small devices so only the image appears. -->
+								<i class="fa fa-user"></i> <span class="hidden-xs"><?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getNombre();?>
 </span>
-								</a>
-								<ul class="dropdown-menu">
-									<!-- The user image in the menu -->
-									<li class="user-header">
-										<img src="http://www.iebo.edu.mx/interno/sip-web/fotos/<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getFoto();?>
+							</a>
+							<ul class="dropdown-menu">
+								<!-- The user image in the menu -->
+								<li class="user-header">
+									<!--<img src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+img/logo.jpg" alt="User Image"/>-->
+									<img src="http://www.iebo.edu.mx/interno/sip-web/fotos/<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getFoto();?>
 " onerror="javascript: this.src='<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 img/logo.jpg'" alt="User Image"/>
-										<p>
-											<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getNombre();?>
+									<p>
+										<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getNombre();?>
 
-											<small><?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getUser();?>
+										<small><?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getUser();?>
 </small>
-										</p>
-									</li>
-									<!-- Menu Body -->
-									<li class="user-body">
-									</li>
-									<!-- Menu Footer-->
-									<li class="user-footer">
-										<div class="pull-right">
-											<a href="?mod=logout" class="btn btn-default btn-flat">Salir</a>
-										</div>
-									</li>
-								</ul>
-							</li>
+									</p>
+								</li>
+								<!-- Menu Body -->
+								<li class="user-body">
+								</li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-right">
+										<a href="?mod=logout" class="btn btn-default btn-flat">Salir</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-custom-menu -->
+			</nav>
+		</header>
+		
+		
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+			<!-- Sidebar user panel -->
+			<!-- sidebar menu: : style can be found in sidebar.less -->
+				<ul class="sidebar-menu">
+					<li class="header">MENÚ PRINCIPAL</li>
+					<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getTipo(),array(1,2))){?>
+					<li class="<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['modulo'],array('configuracion','admonUsuarios'))){?>active<?php }?> treeview">
+						<a href="#">
+							<i class="fa fa-cogs"></i> <span>Administración</span> <i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+							<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getTipo(),array(1))){?>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='configuracion'){?>class="active"<?php }?>><a href="?mod=configuracion"><i class="fa fa-cogs"></i> Configuración</a></li>
+							<?php }?>
+							<?php if (in_array($_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getTipo(),array(1,2))){?>
+							<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='admonUsuarios'){?>class="active"<?php }?>><a href="?mod=admonUsuarios"><i class="fa fa-user"></i> Usuarios</a></li>
+							<?php }?>
 						</ul>
-					</div><!-- /.navbar-custom-menu -->
-				</nav>
-			</header>
-			<!-- Full Width Column -->
-			<div class="content-wrapper">
-				<div class="container">
-					<!-- Main content -->
-					<section class="content">
-						<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
-							<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+					</li>
+					<?php }?>
+					<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='examenes'){?>class="active"<?php }?>>
+						<a href="?mod=examenes">
+							<i class="fa fa-pencil-square-o"></i> Exámenes
+						</a>
+					</li>
+					<li <?php if ($_smarty_tpl->tpl_vars['PAGE']->value['modulo']=='soporteTecnico'){?>class="active"<?php }?>>
+						<a href="?mod=soporteTecnico">
+							<i class="fa fa-phone"></i> Soporte técnico
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- /.sidebar -->
+		</aside>
+		
+		
+		
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+		
+			<!-- Main content -->
+			<section class="content">
+				<div class="row">
+					<div class="col-lg-12">
+					<?php if ($_smarty_tpl->tpl_vars['PAGE']->value['vista']!=''){?>
+						<?php echo $_smarty_tpl->getSubTemplate ($_smarty_tpl->tpl_vars['PAGE']->value['vista'], $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-						<?php }?>
-					</section><!-- /.content -->
+					<?php }?>
+					</div>
 				</div>
-			</div>
-		</div><!-- /.container -->
-	</div><!-- /.content-wrapper -->
-	<footer class="main-footer">
-		<div class="container">
+			</section><!-- /.content -->
+		</div><!-- /.content-wrapper -->
+		<footer class="main-footer">
 			<div class="pull-right hidden-xs">
-            <b>Version</b> <?php echo $_smarty_tpl->tpl_vars['PAGE']->value['version'];?>
+				<b>Versión</b> <?php echo $_smarty_tpl->tpl_vars['PAGE']->value['version'];?>
 
-          </div>
-          <strong>Copyright &copy; <?php echo date("Y");?>
+			</div>
+			<strong>Copyright &copy; <?php echo date("Y");?>
  <a href="http://iebo.edu.mx">IEBO</a>.</strong> Todos los derechos reservados
-        </div><!-- /.container -->
-      </footer>
-    </div><!-- ./wrapper -->
-
+		</footer>
+	</div>
+    
+    
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
 plugins/jQuery/jQuery-2.1.4.min.js"></script>

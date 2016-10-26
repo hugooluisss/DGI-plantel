@@ -86,7 +86,7 @@ TUsuario = function(){
 		}, "json");
 	}
 	
-	this.importarTrabajador = function(num_personal, nombre, usuario, pass, sexo, plantel, correo, fn){
+	this.importarTrabajador = function(num_personal, nombre, usuario, pass, sexo, plantel, correo, plaza, fn){
 		if (fn.before !== undefined) fn.before();
 		
 		$.post('?mod=csip&action=importar', {
@@ -96,6 +96,7 @@ TUsuario = function(){
 			"pass": pass,
 			"sexo": sexo,
 			"plantel": plantel,
+			"nombre_plaza": plaza,
 			"correo": correo
 		}, function(data){
 			if (fn.after != undefined)
@@ -106,6 +107,19 @@ TUsuario = function(){
 			}
 		}, "json");
 	}
+	
+	this.importarTodosTrabajadores = function(fn){
+		if (fn.before !== undefined) fn.before();
+		
+		$.get('?mod=csip&action=importarTodos', function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+				
+			if (data.band == 'false'){
+				alert("La lista no se pudo importar");
+			}
+		}, "json");
+	};
 	
 	this.sendMail = function(id, accion, fn){
 		if (fn.before !== undefined) fn.before();

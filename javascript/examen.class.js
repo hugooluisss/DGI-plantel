@@ -76,6 +76,23 @@ TExamen = function(){
 		}, "json");
 	}
 	
+	this.addSustentanteByTipo = function(examen, tipo, fn){
+		if (fn.before !== undefined)
+			fn.before();
+			
+		$.post('?mod=cexamenes&action=addSustentanteByTipo', {
+			"tipo": tipo,
+			"examen": examen
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+				
+			if (!data.band){
+				alert("Ocurrió un error al agregar a los sustentantes");
+			}
+		}, "json");
+	}
+	
 	this.exportarPorMail = function(examen, archivo, fn){
 		if (fn.before !== undefined)
 			fn.before();

@@ -16,6 +16,9 @@ switch($objModulo->getId()){
 			case 1:
 				header('Location: ?mod=admonUsuarios');
 			break;
+			case 2:
+				header('Location: ?mod=soporteTecnico');
+			break;
 			case 3:
 				header('Location: ?mod=sustentante');
 			break;

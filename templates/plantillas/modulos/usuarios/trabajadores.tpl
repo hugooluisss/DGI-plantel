@@ -1,3 +1,8 @@
+<div class="row">
+	<div class="col-md-12">
+		<a href="#" class="btn btn-danger pull-center" id="btnImportarTodos">Actualiza / Importar todos</a>
+	</div>
+</div>
 <table id="tblTrabajadores" class="table table-bordered table-hover">
 	<thead>
 		<tr>

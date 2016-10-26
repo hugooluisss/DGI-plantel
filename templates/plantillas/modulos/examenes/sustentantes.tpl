@@ -3,7 +3,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h1>Sustentantes</h1>
+				<h3 class="modal-title">Sustentantes</h3>
 			</div>
 			<div class="modal-body">
 				

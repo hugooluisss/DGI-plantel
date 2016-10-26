@@ -120,49 +120,66 @@ $(document).ready(function(){
 				$("#winSustentantes").modal();
 			    var examen = $(this);
 			    
-				$.post("?mod=listaSustentantes", {
-					"examen": examen.attr("examen")
-				}, function( data ) {
-					$("#winSustentantes .modal-body").html(data);
-					
-					$("#winSustentantes [type=checkbox]").change(function(){
-						var el = $(this);
-						var obj = new TExamen;
-						if (el.is(":checked"))
-							obj.addSustentante(el.attr("examen"), el.attr("usuario"), {
-								before: function(){
-									el.prop("disabled", true);
-								},
-								after: function(result){
-									el.prop("disabled", false);
-									if (!result.band)
-										el.attr("checked", false);
-								}
-							});
-						else
-							obj.delSustentante(el.attr("examen"), el.attr("usuario"), {
-								before: function(){
-									el.prop("disabled", true);
-								},
-								after: function(result){
-									el.prop("disabled", false);
-									if (!result.band)
-										el.attr("checked", true);
-								}
-							});
+			    function listaSustentantes(){
+					$.post("?mod=listaSustentantes", {
+						"examen": examen.attr("examen")
+					}, function( data ) {
+						$("#winSustentantes .modal-body").html(data);
+						
+						$("#winSustentantes").find(".add").click(function(){
+							var btn = $(this);
+							
+							if (confirm("Estas apunto de agregar " + btn.attr("total") + " sustentantes del tipo " + btn.attr("tipo") + " ¿seguro?")){
+								var obj = new TExamen;
+								obj.addSustentanteByTipo(examen.attr("examen"), btn.attr("tipo"), {
+									after: function(resp){
+										alert("El proceso terminó, se han agregado a los sustentantes");
+										listaSustentantes();
+									}
+								});
+							}
+						});
+						
+						$("#winSustentantes [type=checkbox]").change(function(){
+							var el = $(this);
+							var obj = new TExamen;
+							if (el.is(":checked"))
+								obj.addSustentante(el.attr("examen"), el.attr("usuario"), {
+									before: function(){
+										el.prop("disabled", true);
+									},
+									after: function(result){
+										el.prop("disabled", false);
+										if (!result.band)
+											el.attr("checked", false);
+									}
+								});
+							else
+								obj.delSustentante(el.attr("examen"), el.attr("usuario"), {
+									before: function(){
+										el.prop("disabled", true);
+									},
+									after: function(result){
+										el.prop("disabled", false);
+										if (!result.band)
+											el.attr("checked", true);
+									}
+								});
+						});
+						
+						$("#tblSustentantes").DataTable({
+							"responsive": true,
+							"language": espaniol,
+							"paging": true,
+							"lengthChange": false,
+							"ordering": true,
+							"info": true,
+							"autoWidth": false
+						});
 					});
-					
-					$("#tblSustentantes").DataTable({
-						"responsive": true,
-						"language": espaniol,
-						"paging": true,
-						"lengthChange": false,
-						"ordering": true,
-						"info": true,
-						"autoWidth": false
-					});
-				});
+				 }
 				 
+				 listaSustentantes();
 			});
 			
 						

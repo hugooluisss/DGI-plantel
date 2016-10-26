@@ -22,6 +22,13 @@ switch($objModulo->getId()){
 	break;
 	case 'listaSustentantes':
 		$db = TBase::conectaDB();
+		$tipos = array();
+		foreach(array("ASESOR", "DIRECTOR DE PLANTEL") as $key => $val){
+			$rs = $db->Execute("select count(*) as total from usuario where idTipo = 3 and estado = 'A' and otro like '%".$val."%' and not idUsuario in (select idUsuario from sustentante where idExamen = ".$_POST['examen'].")");
+			
+			array_push($tipos, array("id" => $val, "total" => $rs->fields['total']));
+		}
+		$smarty->assign("tipos", $tipos);
 		
 		$rs = $db->Execute("select * from usuario where idTipo = 3 and estado = 'A'");
 		$datos = array();
@@ -148,6 +155,18 @@ switch($objModulo->getId()){
 			case 'addSustentante':
 				$examen = new TExamen($_POST['examen']);
 				echo json_encode(array("band" => $examen->addSustentante($_POST['usuario'])));
+			break;
+			case 'addSustentanteByTipo':
+				$examen = new TExamen($_POST['examen']);
+				$db = TBase::conectaDB();
+		
+				$rs = $db->Execute("select idUsuario from usuario where otro like '%".$_POST['tipo']."%' and not idUsuario in (select idUsuario from sustentante where idExamen = ".$_POST['examen'].")");
+				while(!$rs->EOF){
+					$examen->addSustentante($rs->fields['idUsuario']);
+					$rs->moveNext();
+				}
+				
+				echo json_encode(array("band" => true));
 			break;
 			case 'delSustentante':
 				$examen = new TExamen($_POST['examen']);

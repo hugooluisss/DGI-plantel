@@ -234,7 +234,7 @@ $(document).ready(function(){
 		    		var usuario = new TUsuario;
 		    		trabajador = jQuery.parseJSON(el.attr("json"));
 		    		
-		    		usuario.importarTrabajador(trabajador.num_personal, trabajador.nombres + " " + trabajador.apellido_p + " " + trabajador.apellido_m, trabajador.curp, trabajador.nip, trabajador.sexo, trabajador.id_plantel, trabajador.correo_pers, {
+		    		usuario.importarTrabajador(trabajador.num_personal, trabajador.nombres + " " + trabajador.apellido_p + " " + trabajador.apellido_m, trabajador.curp, trabajador.nip, trabajador.sexo, trabajador.id_plantel, trabajador.correo_pers, trabajador.nombre_plaza, {
 		    			before: function(){
 			    			el.prop("disabled", true);
 		    			},
@@ -251,6 +251,23 @@ $(document).ready(function(){
 		    			}
 		    		});
 		    	});
+		    	
+		    	$("#btnImportarTodos").click(function(){
+	    			if(confirm("Este proceso puede tomar varios minutos, ¿estas seguro?")){
+	    				var usuario = new TUsuario;
+	    				usuario.importarTodosTrabajadores({
+	    					before: function(){
+		    					$("#btnImportarTodos").prop("disabled", true);
+	    					}, 
+	    					after: function(resp){
+		    					$("#btnImportarTodos").prop("disabled", false);
+		    					getLista();
+		    					
+		    					alert("Listo... la importación ha terminado");
+	    					}
+	    				});
+	    			}
+	    		});
 		    	
 		    	$("#tblTrabajadores").DataTable({
 					"responsive": true,
