@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-17 12:14:36
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-25 13:27:47
          compiled from "templates/plantillas/modulos/aplicacion/instruccionesExamen.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1257067655699309aa55170-34829181%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:973129440580fa4237bb005-59640621%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2c715b438e7e68cf8e00a433ddedeaf6e89acf07' => 
     array (
       0 => 'templates/plantillas/modulos/aplicacion/instruccionesExamen.tpl',
-      1 => 1476724475,
+      1 => 1476898391,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1257067655699309aa55170-34829181',
+  'nocache_hash' => '973129440580fa4237bb005-59640621',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5699309aac3bd9_92183464',
   'variables' => 
   array (
     'examen' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'row' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_580fa423860052_39618114',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5699309aac3bd9_92183464')) {function content_5699309aac3bd9_92183464($_smarty_tpl) {?><div class="page-header">
+<?php if ($_valid && !is_callable('content_580fa423860052_39618114')) {function content_580fa423860052_39618114($_smarty_tpl) {?><div class="page-header">
   <h1><?php echo $_smarty_tpl->tpl_vars['examen']->value->getNombre();?>
 </h1>
   <small>Datos generales del examen</small>
@@ -105,15 +105,16 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 			</table>
 		<?php }else{ ?>
 			<h3>¡¡¡ Felicidades !!!</h3>
-			<p>Haz completado el proceso de evaluación, a continuación tus resultados</p>
-			
+			<p>Haz terminado el proceso de evaluación "EVA 2016", tus resultados los podrás consultar en fechas posteriores. Te pedimos estar atento a los comunicados que se emitirán en la página institucional del IEBO.</p>
+			<p>¡Por tu activa participación, Muchas Gracias!</p>
+			<!--
 			<table id="tblSecciones" class="table table-striped table-hover">
 				<thead>
 					<tr>
 						<th>Nombre</th>
 						<th style="text-align: center">Total de puntos</th>
 						<th style="text-align: center">Puntos acumulados</th>
-<!--						<th style="text-align: center">Calificación</th>-->
+<!--						<th style="text-align: center">Calificación</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -130,11 +131,12 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 							<td style="text-align: right"><?php echo $_smarty_tpl->tpl_vars['row']->value['acumulados'];?>
 </td>
 							<!--<td style="text-align: right"><?php echo sprintf("%.1f",($_smarty_tpl->tpl_vars['row']->value['acumulados']/$_smarty_tpl->tpl_vars['row']->value['puntos']*10));?>
-</td>-->
+</td>
 						</tr>
 					<?php } ?>
 				</tbody>
 			</table>
+			-->
 		<?php }?>
 	</div>
 </div><?php }} ?>

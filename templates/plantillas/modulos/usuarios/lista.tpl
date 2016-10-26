@@ -19,7 +19,7 @@
 						<td>{$row.nombre}</td>
 						<td>{$row.tipo}</td>
 						<td style="text-align: right">
-							<button type="button" class="btn btn-warning" action="getData" title="Ver usuario y contraseña" datos='{$row.json}'><i class="fa fa-key" aria-hidden="true"></i></button>
+							<button type="button" class="btn btn-warning" action="getData" title="Ver usuario y contraseÃ±a" datos='{$row.json}'><i class="fa fa-key" aria-hidden="true"></i></button>
 							<button type="button" class="btn btn-success" action="modificar" title="Modificar" datos='{$row.json}'><i class="fa fa-pencil"></i></button>
 							<button type="button" class="btn btn-danger" action="eliminar" title="Eliminar" usuario="{$row.idUsuario}"><i class="fa fa-times"></i></button>
 						</td>

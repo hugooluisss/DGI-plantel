@@ -7,28 +7,26 @@ $(document).ready(function(){
 		}, function(resp){
 			$("#winDetalle").find(".modal-body").html(resp);
 			
-			$("[action=getData]").click(function(){
+			$("[accion=getData2]").click(function(){
 				var el = $(this);
+				var btn = el;
 				alert("USUARIO: " + el.attr("user") + " \nCONTRASEÑA: " + el.attr("pass"));
 				
-				try{
-					if (otros.correo != ''){
-						if(confirm("¿Deseas enviarle los datos a su correo? ")){
-							var obj = new TUsuario;
-							obj.sendMail(el.attr("idUsuario"), "datosAcceso", {
-								before: function(){
-									btn.prop("disabled", true);
-								}, after: function(resp){
-									btn.prop("disabled", false);
-									if (!resp.band)
-										alert("No se pudo enviar el correo a ");
-								}
-							});
-						}
+				if (el.attr("correo") != ''){
+					if(confirm("¿Deseas enviarle los datos a su correo? ")){
+						var obj = new TUsuario;
+						obj.sendMail(el.attr("idUsuario"), "datosAcceso", {
+							before: function(){
+								btn.prop("disabled", true);
+							}, after: function(resp){
+								btn.prop("disabled", false);
+								if (!resp.band)
+									alert("No se pudo enviar el correo");
+							}
+						});
 					}
-				}catch(e){
-					console.log("No tiene correo");
 				}
+				
 			});
 		});
 	});

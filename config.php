@@ -220,7 +220,7 @@ $conf['soporteTecnico'] = array(
 	'vista' => 'soporteTecnico/panel.tpl',
 	'descripcion' => 'Configuracion del sistema',
 	'seguridad' => true,
-	#'js' => array('aplicacion.class.js'),
+	'js' => array('usuario.class.js'),
 	'jsTemplate' => array('soporteTecnico.js'),
 	'capa' => LAYOUT_DEFECTO);
 	

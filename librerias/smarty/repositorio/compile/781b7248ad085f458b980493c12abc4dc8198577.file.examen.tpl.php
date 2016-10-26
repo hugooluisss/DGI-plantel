@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-17 11:38:21
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-25 13:16:15
          compiled from "templates/plantillas/layout/examen.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:10912479305699253832f710-22457601%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:743905387580fa16f9c0f64-92323439%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '781b7248ad085f458b980493c12abc4dc8198577' => 
     array (
       0 => 'templates/plantillas/layout/examen.tpl',
-      1 => 1476292591,
+      1 => 1476897046,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10912479305699253832f710-22457601',
+  'nocache_hash' => '743905387580fa16f9c0f64-92323439',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_56992538427431_60543940',
   'variables' => 
   array (
     'PAGE' => 0,
@@ -24,8 +22,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'script' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_580fa16fb36262_28047372',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56992538427431_60543940')) {function content_56992538427431_60543940($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_580fa16fb36262_28047372')) {function content_580fa16fb36262_28047372($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -102,8 +102,8 @@ templates/dist/respond.min.js"></script>
 </a>
 								</li>
 								
-								<li><a href="?mod=instruccionesExamen&id=<?php echo $_smarty_tpl->tpl_vars['seccion']->value->getExamen();?>
-">Seleccionar otra sección</a></li>
+								<!--<li><a href="?mod=instruccionesExamen&id=<?php echo $_smarty_tpl->tpl_vars['seccion']->value->getExamen();?>
+">Seleccionar otra sección</a></li>-->
 								<?php }?>
 							<?php }?>
 						</ul>
@@ -122,6 +122,9 @@ templates/dist/respond.min.js"></script>
 								<ul class="dropdown-menu">
 									<!-- The user image in the menu -->
 									<li class="user-header">
+										<img src="http://www.iebo.edu.mx/interno/sip-web/fotos/<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getFoto();?>
+" onerror="javascript: this.src='<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['ruta'];?>
+img/logo.jpg'" alt="User Image"/>
 										<p>
 											<?php echo $_smarty_tpl->tpl_vars['PAGE']->value['usuario']->getNombre();?>
 

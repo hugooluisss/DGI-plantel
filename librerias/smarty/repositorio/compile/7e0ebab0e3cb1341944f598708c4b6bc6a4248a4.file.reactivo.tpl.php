@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-05-12 09:18:04
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-25 13:26:06
          compiled from "templates/plantillas/modulos/aplicacion/reactivo.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:13652768156a10b0b074689-06423277%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1022497556580fa170beaa28-43096139%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7e0ebab0e3cb1341944f598708c4b6bc6a4248a4' => 
     array (
       0 => 'templates/plantillas/modulos/aplicacion/reactivo.tpl',
-      1 => 1463062683,
+      1 => 1477419938,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '13652768156a10b0b074689-06423277',
+  'nocache_hash' => '1022497556580fa170beaa28-43096139',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_56a10b0b092330_97603618',
+  'unifunc' => 'content_580fa170cb9603_23116438',
   'variables' => 
   array (
     'reactivo' => 0,
@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56a10b0b092330_97603618')) {function content_56a10b0b092330_97603618($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/DGI/plantel/librerias/smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_580fa170cb9603_23116438')) {function content_580fa170cb9603_23116438($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/Library/WebServer/Documents/proyectoDGI/plantel/librerias/smarty/plugins/modifier.date_format.php';
 ?><div class="panel panel-default">
 	<div class="panel-heading">
 		<h3>Reactivo</h3>
@@ -60,6 +60,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 	<div class="panel-footer">
 		<div class="row">
 			<div class="col-xs-12 text-right">
+				<span class="text-danger" id="msgGuardando"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i> Estamos guardado tu respuesta, espera...</span>
 				<button id="btnGuardar" class="btn btn-success">Guardar</button>
 				<button id="btnSaltarSinContestar" class="btn btn-danger">Siguiente sin contestar</button>
 			</div>

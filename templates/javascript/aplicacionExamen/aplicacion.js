@@ -13,11 +13,12 @@ $(document).ready(function(){
 		aplicacion.siguiente();
 		
 		aplicacion.getPregunta({
+			before: function(){
+				$(".pregunta").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> Estamos obteniendo la pregunta... espera');
+			},
 			after: function(resp){
-				$(".pregunta").html(resp);
+				//$(".pregunta").html(resp);
 				
-				
-					
 				setGuardarRespuesta();
 			}
 		});
@@ -27,6 +28,9 @@ $(document).ready(function(){
 		aplicacion.anterior();
 		
 		aplicacion.getPregunta({
+			before: function(){
+				$(".pregunta").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> Estamos obteniendo la pregunta... espera');
+			},
 			after: function(resp){
 				$(".pregunta").html(resp);
 					
@@ -73,6 +77,9 @@ $(document).ready(function(){
 						alert("Todos los reactivos tienen ya una respuesta");
 						
 					aplicacion.getPregunta({
+						before: function(){
+							$(".pregunta").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> Estamos obteniendo la pregunta... espera');
+						},
 						after: function(resp){
 							$(".pregunta").html(resp);
 							setGuardarRespuesta();
@@ -93,6 +100,9 @@ $(document).ready(function(){
 						a.click(function(){
 							aplicacion.setIndice($(this).attr('indice'));
 							aplicacion.getPregunta({
+								before: function(){
+									$(".pregunta").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> Estamos obteniendo la pregunta... espera');
+								},
 								after: function(resp){
 									$(".pregunta").html(resp);
 									$("#winReactivos").modal("hide");
@@ -123,13 +133,19 @@ $(document).ready(function(){
 	function setGuardarRespuesta(){
 		$("#dvContestados").html((aplicacion.preguntas.length - aplicacion.getNumPreguntaSinContestar()) + " reactivos contestados");	
 		$("#dvNumeracion").html("Reactivo <b>" + (parseInt(aplicacion.indice)+1) + "</b> de "+ aplicacion.preguntas.length);	
-						
+		$("#msgGuardando").hide();
 		$("#btnGuardar").click(function(){
 			if ($(".list-group input[type=radio]:checked").val() == '' || $(".list-group input[type=radio]:checked").length < 1)
 				alert("Indica tu respuesta");
 			else{
 				aplicacion.guardarRespuesta($(".list-group input[type=radio]:checked").attr("value"), $("#mostrado").val(), {
+					before: function(){
+						$("#btnGuardar").prop("disabled", true);
+						$("#msgGuardando").show();
+					},
 					after: function(resp){
+						$("#btnGuardar").prop("disabled", false);
+						$("#msgGuardando").hide();
 						if (resp.band == true){
 							$(".getReactivo[indice=" + aplicacion.indice + "]").addClass("btn-primary");
 							
@@ -143,6 +159,9 @@ $(document).ready(function(){
 							
 							if(aplicacion.nextIndice())
 								aplicacion.getPregunta({
+									before: function(){
+										$(".pregunta").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> Estamos obteniendo la pregunta... espera');
+									},
 									after: function(resp){
 										$(".pregunta").html(resp);
 											
@@ -167,6 +186,9 @@ $(document).ready(function(){
 				alert("Este es el último reactivo sin contestar");
 			else{
 				aplicacion.getPregunta({
+					before: function(){
+						$(".pregunta").html('<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i> Estamos obteniendo la pregunta... espera');
+					},
 					after: function(resp){
 						$(".pregunta").html(resp);
 							

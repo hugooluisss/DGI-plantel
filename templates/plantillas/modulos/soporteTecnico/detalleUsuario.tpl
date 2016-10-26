@@ -33,7 +33,7 @@
 			<input type="text" class="form-control" disabled readonly value="{$usuario->getDecodeOtro()->sexo}">
 		</div>
 		<div class="col-sm-2">
-			<button action="getData" class="btn btn-danger" user="{$usuario->getUser()}" pass="{$usuario->getPass()}" correo="{$usuario->getDecodeOtro()->correo}">Enviar Datos</button>
+			<a href="#" accion="getData2" class="btn btn-danger" user="{$usuario->getUser()}" pass="{$usuario->getPass()}" correo="{$usuario->getDecodeOtro()->correo}">Enviar Datos</a>
 		</div>
 	</div>
 </form>

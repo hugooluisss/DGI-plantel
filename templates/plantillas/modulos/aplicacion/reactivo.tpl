@@ -25,6 +25,7 @@
 	<div class="panel-footer">
 		<div class="row">
 			<div class="col-xs-12 text-right">
+				<span class="text-danger" id="msgGuardando"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i> Estamos guardado tu respuesta, espera...</span>
 				<button id="btnGuardar" class="btn btn-success">Guardar</button>
 				<button id="btnSaltarSinContestar" class="btn btn-danger">Siguiente sin contestar</button>
 			</div>
