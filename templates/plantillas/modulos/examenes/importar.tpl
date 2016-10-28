@@ -3,7 +3,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h1>Importar examen</h1>
+				<h4>Importar examen</h4>
 			</div>
 			<div class="modal-body">
 				<p>Este es un archivo que se obtiene del sistema en oficinas centrales, puedes solicitarlo por correo electrónico</p>

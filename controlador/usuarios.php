@@ -17,7 +17,7 @@ switch($objModulo->getId()){
 	case 'listaUsuarios':
 		$db = TBase::conectaDB();
 		
-		$rs = $db->Execute("select a.*, b.nombre as tipo from usuario a join tipousuario b using(idTipo)");
+		$rs = $db->Execute("select a.*, b.nombre as tipo from usuario a join tipoUsuario b using(idTipo)");
 		$datos = array();
 		while(!$rs->EOF){
 			$rs->fields['json'] = json_encode($rs->fields);

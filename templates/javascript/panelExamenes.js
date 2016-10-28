@@ -50,6 +50,8 @@ $(document).ready(function(){
 		        });
 		        
 		        btn.click(function(){
+		        	btn = $(this);
+		        	
 		        	if(confirm("¿Seguro?")){
 		        		var obj = new TExamen;
 		        		obj.importar({
@@ -114,6 +116,10 @@ $(document).ready(function(){
 			
 			$("[action=resultados]").click(function(){
 				window.location = "?mod=resultados&examen=" + $(this).attr("examen");
+			});
+			
+			$("#winSustentantes").on('show', function(){
+				$("#winSustentantes .modal-body").html("Estamos obteniendo los datos...");
 			});
 			
 			$("[action=sustentantes]").click(function(){

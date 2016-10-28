@@ -18,11 +18,11 @@ switch($objModulo->getId()){
 		$smarty->assign("usuario", new TUsuario($_POST['id']));
 		
 		$db = TBase::conectaDB();
-		#$rs = $db->Execute("select a.*, b.nombre as seccion, c.nombre as examen from aplicacion a join seccion b using(idSeccion) join examen c using(idExamen) left join sustentante d using(idUsuario, idExamen) where idUsuario = ".$_POST['id']);
 		$rs = $db->Execute("select d.*, c.nombre as seccion, b.nombre as examen from sustentante a join examen b using(idExamen) join seccion c using(idExamen) left join aplicacion d using(idUsuario, idSeccion) where a.idUsuario = ".$_POST['id']." and b.estado = 'P';");
 		$datos = array();
 		
 		while(!$rs->EOF){
+			$rs->fields["objSeccion"] = new TSeccion($rs->fields['idSeccion']);
 			array_push($datos, $rs->fields);
 			$rs->moveNext();
 		}

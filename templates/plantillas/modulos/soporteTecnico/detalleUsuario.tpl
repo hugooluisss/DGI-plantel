@@ -48,7 +48,7 @@
 					<th>Sección</th>
 					<th>Inicio</th>
 					<th>Fin</th>
-					<th>&nbsp;</th>
+					<th>Reactivos</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,9 +57,12 @@
 						<td style="background:{if $row.fin eq ''}red{else}green{/if}">{$row.idAplicacion}</td>
 						<td>{$row.examen}</td>
 						<td>{$row.seccion}</td>
-						<td>{if $row.inicio eq ''}<b>Sin iniciar</b>{else}{$row.seccion}{/if}</td>
+						<td>{if $row.inicio eq ''}<b>Sin iniciar</b>{else}{$row.inicio}{/if}</td>
 						<td>{if $row.fin eq ''}<b>Sin finalizar</b>{else}{$row.fin}{/if}</td>
 						<td style="text-align: right">
+							{if $row.idAplicacion neq ''}
+								{$row.objSeccion->getPuntosAcumulados($usuario->getId())} / {$row.objSeccion->getPuntos()}
+							{/if}
 						</td>
 					</tr>
 				{/foreach}

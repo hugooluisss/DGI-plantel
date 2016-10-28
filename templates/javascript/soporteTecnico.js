@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$("[action=detalle]").click(function(){
 		$("#winDetalle").modal();
 		el = $(this);
+		
 		$.post("?mod=detalleUsuario", {
 			"id": el.attr("usuario")
 		}, function(resp){
@@ -27,6 +28,19 @@ $(document).ready(function(){
 					}
 				}
 				
+			});
+			
+			$("#tblAplicaciones").DataTable({
+				"responsive": true,
+				"language": espaniol,
+				"paging": false,
+				"lengthChange": false,
+				"ordering": true,
+				"order": [
+					[3, "asc"]
+				],
+				"info": true,
+				"autoWidth": false
 			});
 		});
 	});

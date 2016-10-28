@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 		{foreach from=$tipos item="row"}
-			<button class="btn btn-success add" tipo="{$row.id}" total="{$row.total}">Agregar {$row.id} <span class="badge">{$row.total}</span></button> 
+			<button class="btn btn-success add btn-xs" tipo="{$row.id}" total="{$row.total}">Agregar {$row.id} <span class="badge">{$row.total}</span></button> 
 		{/foreach}
 	</div>
 </div>

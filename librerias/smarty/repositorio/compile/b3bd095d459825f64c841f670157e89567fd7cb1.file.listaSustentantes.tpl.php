@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-26 13:58:39
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-27 08:40:36
          compiled from "templates/plantillas/modulos/examenes/listaSustentantes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1204612415810eacb4a4b06-36931887%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b3bd095d459825f64c841f670157e89567fd7cb1' => 
     array (
       0 => 'templates/plantillas/modulos/examenes/listaSustentantes.tpl',
-      1 => 1477508038,
+      1 => 1477575631,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars["row"]->key => $_smarty_tpl->tpl_vars["row"]->value){
 $_smarty_tpl->tpl_vars["row"]->_loop = true;
 ?>
-			<button class="btn btn-success add" tipo="<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
+			<button class="btn btn-success add btn-xs" tipo="<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
 " total="<?php echo $_smarty_tpl->tpl_vars['row']->value['total'];?>
 ">Agregar <?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
  <span class="badge"><?php echo $_smarty_tpl->tpl_vars['row']->value['total'];?>

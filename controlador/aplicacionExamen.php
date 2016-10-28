@@ -142,7 +142,7 @@ switch($objModulo->getId()){
 				$datos['resta'] = $aplicacion->getTiempoRestante();
 				$datos['examen'] = $seccion->getExamen();
 				
-				$rs = $db->Execute("select idReactivo from reactivo where idTema in (select idTema from tema where idSeccion = ".$seccion->getId().")");
+				$rs = $db->Execute("select idReactivo from reactivo where idTema in (select idTema from tema where idSeccion = ".$seccion->getId().") order by posicion");
 				$reactivos = array();
 				$datos['reactivosContestados'] = 0;
 				while(!$rs->EOF){

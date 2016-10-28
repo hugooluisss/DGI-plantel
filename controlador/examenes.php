@@ -61,8 +61,10 @@ switch($objModulo->getId()){
 						exit();
 					}
 					
-					if (!file_exists("temporal/"))
-						mkdir("temporal/", 0755);
+					if (file_exists("temporal/"))
+						delTree('temporal');
+					
+					mkdir("temporal/", 0755);
 									
 					if(move_uploaded_file($_FILES['upl']['tmp_name'], "temporal/".$_FILES['upl']['name'])){
 						chmod("temporal/".$_FILES['upl']['name'], 0755);
@@ -120,6 +122,7 @@ switch($objModulo->getId()){
 						$reactivo->setInstrucciones(addslashes($pregunta->instrucciones));
 						$reactivo->setTema($pregunta->idTema);
 						$reactivo->setValor($pregunta->valor);
+						$reactivo->setPosicion($pregunta->posicion);
 						$reactivo->setRespuesta($pregunta->respuesta);
 						
 						$reactivo->guardar($examen->getId());
