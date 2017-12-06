@@ -14,6 +14,18 @@ $(document).ready(function(){
 				});
 				
 			});
+			
+			$("[action=eliminar]").click(function(){
+				if(confirm("¿Seguro?")){
+					var el = $(this);
+					var aplicacion = new TAplicacion;
+					aplicacion.borrar(el.attr("aplicacion"), $("#examen").val(), {
+						after: function(resp){
+							getListaAplicaciones();
+						}
+					});
+				}
+			});
 		});
 	}
 	

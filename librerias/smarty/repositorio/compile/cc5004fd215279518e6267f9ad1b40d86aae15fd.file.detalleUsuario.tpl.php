@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-27 08:56:11
+<?php /* Smarty version Smarty-3.1.11, created on 2016-10-31 10:13:47
          compiled from "templates/plantillas/modulos/soporteTecnico/detalleUsuario.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1363659480581204c4323493-24039287%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cc5004fd215279518e6267f9ad1b40d86aae15fd' => 
     array (
       0 => 'templates/plantillas/modulos/soporteTecnico/detalleUsuario.tpl',
-      1 => 1477576568,
+      1 => 1477680499,
       2 => 'file',
     ),
   ),
@@ -103,7 +103,7 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['row']->value['seccion'];?>
 </td>
-						<td><?php if ($_smarty_tpl->tpl_vars['row']->value['inicio']==''){?><b>Sin iniciar</b><?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['row']->value['seccion'];?>
+						<td><?php if ($_smarty_tpl->tpl_vars['row']->value['inicio']==''){?><b>Sin iniciar</b><?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['row']->value['inicio'];?>
 <?php }?></td>
 						<td><?php if ($_smarty_tpl->tpl_vars['row']->value['fin']==''){?><b>Sin finalizar</b><?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['row']->value['fin'];?>
 <?php }?></td>

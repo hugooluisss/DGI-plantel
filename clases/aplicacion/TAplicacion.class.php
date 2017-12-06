@@ -146,5 +146,14 @@ class TAplicacion{
 		if ($this->seccion->getId() == '') return 0;
 		return $this->seccion->getPuntosAcumulados($this->usuario->getId());
 	}
+	
+	public function eliminar($fin = ''){
+		if ($this->getId() == '') return false;
+		$db = TBase::conectaDB();
+		
+		$db->Execute("delete from aplicacion where idAplicacion = ".$this->getId());
+		
+		return true;
+	}
 }
 ?>

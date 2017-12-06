@@ -11,7 +11,7 @@
 			<thead>
 				<tr>
 					<th>Sección</th>
-					<th>Nombre</th>
+					<th>Aplicación</th>
 					<th>Sustentante</th>
 					<th>Inicio</th>
 					<th>Fin</th>

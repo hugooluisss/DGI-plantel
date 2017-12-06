@@ -67,28 +67,41 @@
 			<h3>¡¡¡ Felicidades !!!</h3>
 			<p>Haz terminado el proceso de evaluación "EVA 2016", tus resultados los podrás consultar en fechas posteriores. Te pedimos estar atento a los comunicados que se emitirán en la página institucional del IEBO.</p>
 			<p>¡Por tu activa participación, Muchas Gracias!</p>
-			<!--
+			
 			<table id="tblSecciones" class="table table-striped table-hover">
 				<thead>
 					<tr>
 						<th>Nombre</th>
 						<th style="text-align: center">Total de puntos</th>
 						<th style="text-align: center">Puntos acumulados</th>
-<!--						<th style="text-align: center">Calificación</th>
+						<th style="text-align: center">Calificación</th>
 					</tr>
 				</thead>
 				<tbody>
+					{assign var="puntos" value="0"}
+					{assign var="acumulados" value="0"}
 					{foreach from=$secciones item="row"}
 						<tr>
 							<td>{$row.nombre}</td>
 							<td style="text-align: right">{$row.puntos}</td>
 							<td style="text-align: right">{$row.acumulados}</td>
-							<!--<td style="text-align: right">{($row.acumulados/$row.puntos * 10)|string_format:"%.1f"}</td>
+							<td style="text-align: right">{($row.acumulados/$row.puntos * 10)|string_format:"%.1f"}</td>
 						</tr>
+						
+						{assign var="puntos" value=$puntos+$row.puntos}
+						{assign var="acumulados" value=$acumulados+$row.acumulados}
 					{/foreach}
 				</tbody>
+				<tfoot>
+					<tr>
+						<th>Calificación</th>
+						<th class="text-right">{$puntos}</th>
+						<th class="text-right">{$acumulados}</th>
+						<th class="text-right">{($acumulados/$puntos * 10)|string_format:"%.1f"}</th>
+					</tr>
+				</tfoot>
 			</table>
-			-->
+			
 		{/if}
 	</div>
 </div>

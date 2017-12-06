@@ -34,14 +34,15 @@ switch($objModulo->getId()){
 					join aplicacion d using(idAplicacion)
 				where idExamen = ".$_GET['id']." and idUsuario = ".$rs->fields['idUsuario'].";");
 			
-			if (!$rs->EOF){
+			if (!$rsResp->EOF){
 				$rs->fields['respuestas'] = array();
 				while(!$rsResp->EOF){
 					array_push($rs->fields["respuestas"], $rsResp->fields);
 					$rsResp->moveNext();
 				}
+				
+				array_push($datos["sustentantes"], $rs->fields);
 			}
-			array_push($datos["sustentantes"], $rs->fields);
 			$rs->moveNext();
 		}
 		
@@ -50,7 +51,7 @@ switch($objModulo->getId()){
 		
 		if ($zip->open($archivo, ZIPARCHIVE::CREATE) === TRUE){
 			$zip->addFromString("respuestas.txt", base64_encode(json_encode($datos)));
-			
+			$zip->addFromString("respuestasSinEncriptar.txt", json_encode($datos));
 			$zip->close();
 		}
 		
@@ -66,16 +67,15 @@ switch($objModulo->getId()){
 				$db = TBase::conectaDB();
 				
 				if ($aplicacion <> ""){
-					$rs = $db->Execute("select idAplicacion, inicio, fin, idSeccion, idTipo, ip, idUsuario, user from aplicacion a join usuario b using(idUsuario) where idAplicacion = ".$aplicacion.";");
+					$rs = $db->Execute("select idAplicacion, inicio, fin, idSeccion, idTipo, ip, idUsuario, user, otro, nombre from aplicacion a join usuario b using(idUsuario) where idAplicacion = ".$aplicacion.";");
 					
 					$usuario = new TUsuario($rs->fields['idUsuario']);
 					$archivo = "temporal/".$usuario->getNombre().'.zip';
 				}else{
-					$rs = $db->Execute("select idAplicacion, inicio, fin, idSeccion, idTipo, ip, idUsuario, user from aplicacion a join usuario b using(idUsuario) join seccion c using(idSeccion) where idExamen = ".$_POST['examen'].";");
+					$rs = $db->Execute("select idAplicacion, inicio, fin, idSeccion, idTipo, ip, idUsuario, user, otro, identificador from aplicacion a join usuario b using(idUsuario) join seccion c using(idSeccion) where idExamen = ".$_POST['examen'].";");
 					
 					$archivo = "temporal/exportacionTotal.zip";
 				}
-				
 					
 				$datos = array();
 				while(!$rs->EOF){
@@ -191,6 +191,10 @@ switch($objModulo->getId()){
 					$band = $sendMail->send();
 				
 				echo json_encode(array("band" => $band));
+			break;
+			case "eliminar":
+				$objAplicacion = new TAplicacion($_POST['aplicacion']);
+				echo json_encode(array("band" => $objAplicacion->eliminar()));
 			break;
 		}
 	break;

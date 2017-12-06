@@ -16,6 +16,7 @@
 				<td>{$row.inicio}</td>
 				<td>{$row.fin }</td>
 				<td class="text-right">
+					<button type="button" class="btn btn-danger" action="eliminar" title="Limpiar aplicación" aplicacion={$row.idAplicacion}><i class="fa fa-times"></i></button>
 					<button type="button" class="btn btn-info" action="exportar" title="Exportar" aplicacion={$row.idAplicacion}><i class="fa fa-file"></i></button>
 				</td>
 			</tr>

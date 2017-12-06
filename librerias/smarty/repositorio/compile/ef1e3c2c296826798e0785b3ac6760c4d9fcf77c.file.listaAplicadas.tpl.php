@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2016-10-27 08:44:26
+<?php /* Smarty version Smarty-3.1.11, created on 2017-07-31 09:56:06
          compiled from "templates/plantillas/modulos/examenes/dashboard/listaAplicadas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:839849260581204ba139046-26001474%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ef1e3c2c296826798e0785b3ac6760c4d9fcf77c' => 
     array (
       0 => 'templates/plantillas/modulos/examenes/dashboard/listaAplicadas.tpl',
-      1 => 1464011994,
+      1 => 1501512965,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_581204ba2197e6_13830077',
   'variables' => 
   array (
     'lista' => 0,
     'row' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_581204ba2197e6_13830077',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_581204ba2197e6_13830077')) {function content_581204ba2197e6_13830077($_smarty_tpl) {?><table id="tblSecciones" class="table table-bordered table-hover">
 	<thead>
@@ -50,6 +50,8 @@ $_smarty_tpl->tpl_vars["row"]->_loop = true;
 				<td><?php echo $_smarty_tpl->tpl_vars['row']->value['fin'];?>
 </td>
 				<td class="text-right">
+					<button type="button" class="btn btn-danger" action="eliminar" title="Limpiar aplicación" aplicacion=<?php echo $_smarty_tpl->tpl_vars['row']->value['idAplicacion'];?>
+><i class="fa fa-times"></i></button>
 					<button type="button" class="btn btn-info" action="exportar" title="Exportar" aplicacion=<?php echo $_smarty_tpl->tpl_vars['row']->value['idAplicacion'];?>
 ><i class="fa fa-file"></i></button>
 				</td>

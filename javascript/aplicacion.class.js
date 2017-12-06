@@ -156,4 +156,17 @@ TAplicacion = function(tiempo){
 			
 		}, "json");
 	}
+	
+	this.borrar = function(id, examen, fn){
+		if (fn.before !== undefined) fn.before();
+		
+		$.post('?mod=cDashboard&action=eliminar', {
+			"aplicacion": id,
+			"examen": examen
+		}, function(data){
+			if (fn.after != undefined)
+				fn.after(data);
+			
+		}, "json");
+	}
 };
